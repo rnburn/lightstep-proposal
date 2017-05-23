@@ -11,8 +11,8 @@ a C++11 BasicTracer library and LightStep specific library.
    C++11. Something similar could be done for the OpenTracing API, except using
    a C++98 variant (perhaps this
    [one](https://github.com/martinmoene/variant-lite) would work). Given how
-   common type erasure is in the OpenTracing APIs (logging arbitrary key-value
-   pairs and storing arbitrary tags in the SpanOptions), this would probably be
+   common type erasure is in the OpenTracing APIs (also used for logging), this
+   would probably be
    the better long-term solution, but if the goal is to make more minimal changes
    initially it could be accomplished by just adding overloads for each of the tag
    value types.  (Also proposed as part of this
