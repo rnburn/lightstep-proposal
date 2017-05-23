@@ -20,8 +20,8 @@ a C++11 BasicTracer library and LightStep specific library.
 2. *Support followsFrom relations and multiple span references.* Only a
    single childOf relation can currently be
    [specified](https://github.com/opentracing/opentracing-cpp/blob/master/opentracing/tracer.h#L32)
-   when starting a span. I recommend modify the SpanOptions class to take a vector
-   of span contexts along with an enumeration value to denote the reference type.
+   when starting a span. I recommend modify the SpanOptions class to allow a vector
+   of span contexts along with enumeration values to denote the reference types.
 
 I can think of other modifications that should be made. Using the same class to
 represent both a Span and SpanContext is problematic and the [logging
