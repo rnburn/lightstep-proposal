@@ -14,7 +14,7 @@ a C++11 BasicTracer library and LightStep specific library.
    common type erasure is in the OpenTracing APIs (logging arbitrary key-value
    pairs and storing arbitrary tags in the SpanOptions), this would probably be
    the better long-term solution, but if the goal is to make more minimal changes
-   initially it could be accomplished by adding overloads for each of the tag
+   initially it could be accomplished by just adding overloads for each of the tag
    value types.  (Also proposed as part of this
    [PR](https://github.com/jquinn47/opentracing-cpp/blob/1b915dabcdb3c93ca8f2db71ae1efc4350431c8a/opentracing/span.h#L20)).
 2. *Support followsFrom relations and multiple span references.* Only a
