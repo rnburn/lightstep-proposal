@@ -23,6 +23,7 @@ a C++11 BasicTracer library and LightStep specific library.
    when starting a span. I recommend modify the SpanOptions class so that a vector
    of span contexts along with an enumeration value to denote the reference type can be
    passed in.
+
 I can think of other modifications that should be made. Using the same class to
 represent both a Span and SpanContext is problematic and the [logging
 API](https://github.com/opentracing/opentracing-cpp/blob/master/opentracing/span.h#L122)
