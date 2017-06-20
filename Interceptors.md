@@ -5,9 +5,9 @@ Java-Node approach.
 First, some background: the grpc libraries are built on top of a common core C
 library. They interact with the C library by packaging up operations and
 sending them over through functions like
-[start_batch](https://github.com/grpc/grpc/blob/master/include/grpc/grpc.h#L231).The
-Java-Node approach implements interception at the point were operations are
-sent. An interceptor user would write a class like like
+[start_batch](https://github.com/grpc/grpc/blob/master/include/grpc/grpc.h#L231).
+The Java-Node approach implements interception at the point were operations are
+sent to the C library. An interceptor user would write a class like
 
 ```javascript
     var interceptor = {
@@ -39,7 +39,9 @@ sent. An interceptor user would write a class like like
 
 (Taken from the [Node
 proposal](https://github.com/drobertduke/proposal/blob/6a01c9a32cc109e8b1d50b780aae3a1ba4b56bc8/L5-NODEJS-CLIENT-INTERCEPTORS.md#simple))
-where the methods on the class correspond to the [operation types](
+where the methods on the class [correspond](
+https://github.com/drobertduke/proposal/blob/6a01c9a32cc109e8b1d50b780aae3a1ba4b56bc8/L5-NODEJS-CLIENT-INTERCEPTORS.md#grpc-operations)
+to the [operation types](
 https://github.com/grpc/grpc/blob/master/include/grpc/impl/codegen/grpc_types.h#L426)
 defined by the C library.
 
@@ -55,4 +57,5 @@ that
 whether the invoker is making an async RPC and then has to [customize](
 https://github.com/rnburn/grpc-opentracing-1/blob/master/python/grpc_opentracing/_client.py#L52)
 the future returned if so, even though the sync and async RPCs both send the
-same events over to the C library.
+same operations over to the C library, so there's nothing really to distinguish
+them from the C library's perspective.
