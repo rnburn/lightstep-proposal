@@ -37,7 +37,7 @@ sent to the C library. An interceptor user would write a class like
     };
 ```
 
-(Taken from the [Node
+(taken from the [Node
 proposal](https://github.com/drobertduke/proposal/blob/6a01c9a32cc109e8b1d50b780aae3a1ba4b56bc8/L5-NODEJS-CLIENT-INTERCEPTORS.md#simple))
 where the methods on the class [correspond](
 https://github.com/drobertduke/proposal/blob/6a01c9a32cc109e8b1d50b780aae3a1ba4b56bc8/L5-NODEJS-CLIENT-INTERCEPTORS.md#grpc-operations)
